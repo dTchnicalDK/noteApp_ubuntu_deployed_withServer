@@ -1,0 +1,27 @@
+.noteForm {
+  width: 100vw;
+}
+.nav button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  color: white;
+}
+.nav button:nth-child(1) {
+  background-color: red;
+}
+.nav button:nth-child(2) {
+  background-color: green;
+}
+.noteForm {
+  display: flex;
+  flex-direction: column;
+}
+.noteForm input,
+textarea {
+  background-color: blanchedalmond;
+  font-size: 1.5rem;
+  padding: 10px;
+}

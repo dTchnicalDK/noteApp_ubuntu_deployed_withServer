@@ -1,0 +1,32 @@
+.noteForm {
+  width: 100vw;
+}
+.nav button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  color: white;
+}
+.nav button:nth-child(1) {
+  background-color: red;
+}
+.nav button:nth-child(2) {
+  background-color: green;
+}
+.noteForm {
+  display: flex;
+  flex-direction: column;
+}
+/* .content {
+  background-color: rgba(0, 0, 0, 0.61);
+} */
+.noteForm input,
+textarea {
+  background-image: url("../../assets/img/paper1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 1.5rem;
+}
