@@ -2,8 +2,8 @@ import { response } from "express";
 import { Note } from "../models/note.model.js";
 
 // response on home route
-export const homepage = async (req, res) => {
-  res.send("welcome homepage");
+export const test = async (req, res) => {
+  res.send("welcome homepage/testpage");
 };
 
 //controller function to create a new note data and save than inside the database
@@ -47,31 +47,26 @@ export const search = async (req, res) => {
 };
 
 // controller to search data by name
-export const searchByText = async(req, res)=>{
+export const searchByText = async (req, res) => {
   try {
-  const searchText = req.params.text;
-  const foundData = await Note.find({title: searchText})
-  if 
-  (foundData.length === 0)
-    {
-    return res.status(200).json("not found")
-  } 
-    
-    res.status(200).json(foundData)
-  
-} catch (error) {
-  res.status(500).json(`searchByText error:--${error}`)
-}
+    const searchText = req.params.text;
+    const foundData = await Note.find({ title: searchText });
+    if (foundData.length === 0) {
+      return res.status(200).json("not found");
+    }
 
-}
-
+    res.status(200).json(foundData);
+  } catch (error) {
+    res.status(500).json(`searchByText error:--${error}`);
+  }
+};
 
 // controller to edit note
 export const edit = async (req, res) => {
   try {
     const id = req.params.id;
     const body = req.body;
-    const updateNote = await Note.findByIdAndUpdate(id, body)
+    const updateNote = await Note.findByIdAndUpdate(id, body);
     console.log(updateNote);
     res.status(200).json({ msg: "note updated successfully" });
   } catch (error) {
@@ -82,18 +77,13 @@ export const edit = async (req, res) => {
 // controller to delete data by id
 export const deleteNote = async (req, res) => {
   try {
-    const deleteNote = await Note.findByIdAndDelete(req.params.id)
+    const deleteNote = await Note.findByIdAndDelete(req.params.id);
     if (!deleteNote) {
-      return res.status(404).json({msg: "wrong id"})
+      return res.status(404).json({ msg: "wrong id" });
     }
     // res.status(200).json({msg : `note--- ${deleteNote.title} --- deleted`})
-    res.status(200).json({msg : `note--- ${deleteNote.title} --- deleted`})
+    res.status(200).json({ msg: `note--- ${deleteNote.title} --- deleted` });
   } catch (error) {
     console.log(error);
-    
   }
-    
-     
-  
-  
-}
+};
