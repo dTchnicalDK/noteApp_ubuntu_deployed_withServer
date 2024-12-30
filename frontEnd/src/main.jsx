@@ -10,7 +10,7 @@ import { EditUi } from "./components/edit/EditUi.jsx";
 //configuring routerProvider
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <App />,
   },
   {

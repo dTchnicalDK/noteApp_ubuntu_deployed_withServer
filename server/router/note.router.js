@@ -11,7 +11,7 @@ import {
 } from "../controllers/note.controller.js";
 
 // creating route
-route.get("/home", homepage);
+route.get("/", homepage);
 route.post("/create", createNote);
 route.get("/notes", getall);
 // route.get("/search/:id", search)

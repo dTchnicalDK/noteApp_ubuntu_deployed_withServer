@@ -48,7 +48,7 @@ export const EditUi = () => {
       );
       console.log(response.data.msg);
       toast.success(response.data.msg, { position: "top-left" });
-      navigate("/home");
+      navigate("/");
     } catch (error) {
       console.log(`form submit error:- ${error}`);
     }
