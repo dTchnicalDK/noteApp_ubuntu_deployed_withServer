@@ -28,8 +28,8 @@ export const NoteComponent = () => {
     }
     try {
       const response = await axios.post(
-        // "http://localhost:3000/api/create",
-        "http://note-app-ubuntu-deployed-with-server-server-deployment.vercel.app",
+        "http://localhost:3000/api/create",
+
         noteFields
       );
       // console.log(response.data.msg);
