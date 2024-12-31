@@ -11,6 +11,8 @@ import {
 } from "react-share";
 import "./Note.css";
 import axios from "axios";
+import Base_url from "../utility/Base_url";
+const Base_Url = Base_url();
 
 // const currentPageUrl = window.location.href;
 
@@ -20,9 +22,8 @@ function Note({ data, index }) {
   //function to delete note
   const handleDelete = () => {
     axios
-      .delete(`http://localhost:3000/api/delete/${data._id}`)
+      .delete(`${Base_Url}/api/delete/${data._id}`)
       .then((res) => {
-        console.log(res);
         toast.success(res.data.msg, { position: "top-left" });
       })
 

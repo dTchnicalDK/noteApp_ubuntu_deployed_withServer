@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import Base_url from "../utility/Base_url";
+const Base_Url = Base_url();
 import "./NoteComponent.css";
 
 //declaration of blanck object for initial value of "noteFields"
@@ -28,7 +30,7 @@ export const NoteComponent = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/create",
+        `${Base_Url}/api/create`,
 
         noteFields
       );

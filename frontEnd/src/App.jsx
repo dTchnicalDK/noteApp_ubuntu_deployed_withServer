@@ -15,9 +15,14 @@ function App() {
   ];
   const [notes, setNotes] = useState(initialNote);
 
+  const Base_url = "https://noteapp-ubuntu-deployed-withserver.onrender.com";
+
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/notes")
+      .get(
+        // "http://localhost:3000/api/notes"
+        `${Base_url}/api/notes`
+      )
       .then((res) => {
         setNotes(res.data);
         // console.log(res.data);

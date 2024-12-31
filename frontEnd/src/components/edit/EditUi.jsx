@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Base_url from "../utility/Base_url";
+const Base_Url = Base_url();
 import "./EditUi.css";
 
 //declaration of blanck object for initial value of "noteFields"
@@ -20,7 +22,10 @@ export const EditUi = () => {
   //fetching previous data that is to be edited
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/search/${id}`)
+      .get(
+        // `http://localhost:3000/api/search/${id}`
+        `${Base_Url}/api/search/${id}`
+      )
       .then((data) => {
         setNoteFields(data.data);
       })
@@ -43,7 +48,8 @@ export const EditUi = () => {
     }
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/edit/${id}`,
+        // `http://localhost:3000/api/edit/${id}`,
+        `${Base_Url}/api/edit/${id}`,
         noteFields
       );
       console.log(response.data.msg);
