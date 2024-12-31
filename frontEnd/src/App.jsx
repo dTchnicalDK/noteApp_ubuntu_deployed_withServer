@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Note from "./components/note/Note";
 import { IoMdAdd } from "react-icons/io";
-
+import Base_url from "./components/utility/Base_url";
+const Base_Url = Base_url();
 function App() {
   const initialNote = [
     {
@@ -15,13 +16,13 @@ function App() {
   ];
   const [notes, setNotes] = useState(initialNote);
 
-  const Base_url = "https://noteapp-ubuntu-deployed-withserver.onrender.com";
+  // const Base_url = "https://noteapp-ubuntu-deployed-withserver.onrender.com";
 
   useEffect(() => {
     axios
       .get(
         // "http://localhost:3000/api/notes"
-        `${Base_url}/api/notes`
+        `${Base_Url}/api/notes`
       )
       .then((res) => {
         setNotes(res.data);

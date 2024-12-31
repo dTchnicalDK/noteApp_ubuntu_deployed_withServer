@@ -48,7 +48,7 @@ export const NoteComponent = () => {
     if (isConfirmed) {
       console.log("bye, bye!");
 
-      navigate("/home");
+      navigate(`${Base_Url}`);
     } else {
       console.log("Thanks to return");
     }
