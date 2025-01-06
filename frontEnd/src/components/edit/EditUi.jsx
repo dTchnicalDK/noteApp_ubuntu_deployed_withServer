@@ -64,11 +64,8 @@ export const EditUi = () => {
     e.preventDefault();
     let isConfirmed = confirm("unsaved data will be lost");
     if (isConfirmed) {
-      console.log("bye, bye!");
-
-      navigate("/home");
-    } else {
-      console.log("Thanks to return");
+      // console.log("bye, bye!");
+      navigate("/");
     }
   };
 

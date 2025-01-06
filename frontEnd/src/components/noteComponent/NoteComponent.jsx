@@ -46,11 +46,7 @@ export const NoteComponent = () => {
     e.preventDefault();
     let isConfirmed = confirm("unsaved data will be lost");
     if (isConfirmed) {
-      console.log("bye, bye!");
-
-      navigate(`${Base_Url}`);
-    } else {
-      console.log("Thanks to return");
+      navigate("/");
     }
   };
 

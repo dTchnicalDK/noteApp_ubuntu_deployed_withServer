@@ -14,8 +14,6 @@ import axios from "axios";
 import Base_url from "../utility/Base_url";
 const Base_Url = Base_url();
 
-// const currentPageUrl = window.location.href;
-
 function Note({ data, index }) {
   const navigate = useNavigate();
 
@@ -24,7 +22,8 @@ function Note({ data, index }) {
     axios
       .delete(`${Base_Url}/api/delete/${data._id}`)
       .then((res) => {
-        toast.success(res.data.msg, { position: "top-left" });
+        // toast.success(res.data.msg, { position: "top-left" });
+        // toast("Note deleted succesfully", { position: "bottom-left" });
       })
 
       .catch((err) => {
@@ -35,13 +34,13 @@ function Note({ data, index }) {
   //function to edit note
   const handleEdit = (e) => {
     navigate(`/edit/${data._id}`);
-    console.log("edit page activated");
   };
 
   return (
     <div className="container" onDoubleClick={handleEdit}>
       <h3 className="title">{data.title}</h3>
       <p className="body">{data.content}</p>
+
       <div className="menu">
         <span>
           <TiEdit onClick={handleEdit} />

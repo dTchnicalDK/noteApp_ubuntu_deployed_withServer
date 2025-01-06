@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-import "./App.css";
-import { NoteComponent } from "./components/noteComponent/NoteComponent";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./App.css";
+import { NoteComponent } from "./components/noteComponent/NoteComponent";
 import Note from "./components/note/Note";
 import { IoMdAdd } from "react-icons/io";
 import Base_url from "./components/utility/Base_url";
 const Base_Url = Base_url();
+
 function App() {
   const initialNote = [
     {
